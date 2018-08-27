@@ -8,16 +8,31 @@
 #results should print in terminal and export a text file with results
 #see instructions for how output should look
 
-#import csv file
+import os
+import csv
+
+budgetCSV = os.path.join("..", 'PyBank', 'budget_data.csv')
+
+with open(budgetCSV, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader, None)
+
+    #Total number of months
+    months_total = list(csvreader)
+    row_count = len(months_total)
+    print("Total months:" + len(months_total))
+
 #define variables, determine if lists or dictionaries would help
 #determine loops or functions that will allow for calculations
 #instruct to both print in terminal and to create text file
 
 #Date and Profit/Losses columns 
-#Date is Month and Year
-#Profit and loses have no decimals, commas or dollar signs
+#Date is Month and Year, column 0
+#Profit and loses have no decimals, commas or dollar signs; column 1
 
 #function to count the total number of months in data
+# to skip first row/header: next(csv_reader, None)
+#take information from column 1, before the -
 
 #sum of numbers in Profit/losses columns
 
