@@ -18,9 +18,9 @@ with open(budgetCSV, newline="") as csvfile:
     next(csvreader, None)
 
     #Total number of months
-    months_total = list(csvreader)
-    row_count = len(months_total)
-    print("Total months:" + len(months_total))
+    months= list(csvreader)
+    row_count = len(months)
+    print("Total Months: " + str(len(months)))
 
 #define variables, determine if lists or dictionaries would help
 #determine loops or functions that will allow for calculations
