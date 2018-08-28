@@ -27,18 +27,22 @@ with open(budgetCSV, newline="") as csvfile:
 #Sum of Money -- does not work yet; no error but nothing prints
 def Sum(money):
     for row in csvreader:
-        total_money = 0
-        sumofmoney = int(money[1])
-        total_money = total_money + float(money[1])
-        print(f"Total: $ + {float(total_money)}")
+        sumofmoney += int(money[1])
+        print("Total: $" + sum(sumofmoney))
+        #print(f"Total: $ + {float(sumofmoney)}")
         #need to figure out how to tell it sum of column 2 (actually 1). 
         #I think it would be row[1] something. Maybe.
         #can I tell the computer[row, column]?
         #Do I need to redo the with open(budgetCSV....) for each time? 
+        #Do I need to tell it to start at zero?
 
 #Averages Between Months -- does not work yet
-#def Averages(betweenmonths):   
+#def Averages(betweenmonths):
     #for row in csv reader:
+        # months = (month[0])
+        # monthmoney = (monthmoneys[1])
+        #for each monthmoney in months
+        # return monthmoney(first) - monthmoney(second)
     #tell it to subtract between each row in second [1] column
     #tell it to add the outputs from above
     #tell it to divide by the total number of outputs
