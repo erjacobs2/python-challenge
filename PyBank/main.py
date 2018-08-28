@@ -13,6 +13,7 @@ import csv
 
 budgetCSV = os.path.join("..", 'PyBank', 'budget_data.csv')
 
+#what does the thing after the comma do? What's the difference between newline="" and r?
 with open(budgetCSV, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     #Line below skips header row
@@ -23,9 +24,9 @@ with open(budgetCSV, newline="") as csvfile:
     row_count = len(months_count)
     print("Total Months: " + str(len(months_count)))
     
-#Sum of Money -- does not work yet
-def Sum(money)
-    for row in csvreader
+#Sum of Money -- does not work yet; no error but nothing prints
+def Sum(money):
+    for row in csvreader:
         total_money = 0
         sumofmoney = int(money[1])
         total_money = total_money + float(money[1])
@@ -36,12 +37,11 @@ def Sum(money)
         #Do I need to redo the with open(budgetCSV....) for each time? 
 
 #Averages Between Months -- does not work yet
-def Averages(betweenmonths)   
-    for row in csv reader
+#def Averages(betweenmonths):   
+    #for row in csv reader:
     #tell it to subtract between each row in second [1] column
     #tell it to add the outputs from above
     #tell it to divide by the total number of outputs
-#instruct to both print in terminal and to create text file
 
 #Date and Profit/Losses columns 
 #Date is Month and Year, column 0
