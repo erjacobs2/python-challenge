@@ -25,23 +25,40 @@ with open(budgetCSV, newline="") as csvfile:
     print("Total Months: " + str(len(months_count)))
     
 #Sum of Money -- does not work yet; no error but nothing prints
-def Sum(money):
-    for row in csvreader:
-        list = [row[0], row[1]]
-        moneylisted = list(1)
+def Sum():
+    with open(budgetCSV, newline="") as csvfile:
+        csvreader = csv.reader(csvfile, delimiter=",")
+        next(csvreader, None)
+        for row in csvreader:
+            sumofmoney = 0
+            sumofmoney += int(row[1])
+            print(sumofmoney)
         #sumofmoney = []
         #totalmoney = []
         #for each entry in the money column (How do I say this?!)
         #I think the += is telling it to add... hopefully. 
         #for each x in range(moneylisted)
         #totalmoney.append(moneylisted[int(sum(money))])
-        sumofmoney += int(moneylisted)
-        print("Total: $" + sum(sumofmoneyy))
+        #sumofmoney += int(moneylisted)
+        #print("Total: $" + str(sum(sumofmoneyy)))
         #print(f"Total: $ + {float(sumofmoney)}")
         #need to figure out how to tell it sum of column 2 (actually 1). 
         #I think it would be row[1] something. Maybe.
         #can I tell the computer[row, column]?
-        #Do I need to redo the with open(budgetCSV....) for each time? 
+
+Sum()
+
+#list_of_values = 0
+#total = 0
+#row_number = 1
+#for row in csvreader:
+    #if row_number !=1
+        #list_of_values = int(row[1])
+        #total = total + list_of_values
+        #print(total)
+    #row_number += 1
+#printer (total) 
+#print (row_number)
 
 #Averages Between Months -- does not work yet
 #def Averages(betweenmonths):
