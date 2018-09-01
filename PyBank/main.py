@@ -24,24 +24,45 @@ with open(budgetCSV, newline="") as csvfile:
     row_count = len(months_count)
     print("Total Months: " + str(len(months_count)))
 
-#Dictionary
-with open('budget_data.csv') as file:
-    reader = csv.DictReader(file)
-    for row in reader:
+#Dictionary - not complete
+#with open('budget_data.csv') as file:
+    #reader = csv.DictReader(file)
+    #for row in reader:
+        #dates = [str(row[0])]
+        #profits = [int(row[1])]
+
         #this just prints the whole dictionary to show it works
-        print(row)
-        
+        #print(row)
+
+#for row in data:
+    #profit_loss = int(row[1])
+    #print(profit_loss)
+    #total = total + profit_loss
+
 #Sum of Money -- does not work yet; it prints numbers, but not one total number
-def Sum():
-    with open(budgetCSV, newline="") as csvfile:
-        csvreader = csv.reader(csvfile, delimiter=",")
-        next(csvreader, None)
-        sumofmoney = 0
-        for row in csvreader:
-            money = len(row[1])
-            #sumofmoney += int(row[1])
-            sumofmoney += money
-        print("Total: $" + str(sumofmoney))
+#def Sum():
+with open(budgetCSV, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader)
+    #next(csvreader, None)
+    #sumofmoney = 0
+    #for row in csvreader:
+    #for row in range(1, len(profits)):
+    total = 0
+    for row in csvreader: 
+        sumofmoney = int(row[1])
+        total = total + sumofmoney
+        #sumofmoney += int(row[1])
+        #sumofmoney += money
+        #sumofmoney = sumofmoney + total
+    #print("Total: $" + str(sumofmoney))
+    print("Total: $" + str(total))
+
+        # loop through range 1 to number of items in list
+   #for row in range(1, len(CSVlist)):
+
+       #Total Revenue
+       #revenue = revenue + int(CSVlist[row][1])
         
         #sumofmoney = []
         #totalmoney = []
@@ -56,7 +77,7 @@ def Sum():
         #I think it would be row[1] something. Maybe.
         #can I tell the computer[row, column]?
 
-Sum()
+#Sum()
 
 #list_of_values = 0
 #total = 0
