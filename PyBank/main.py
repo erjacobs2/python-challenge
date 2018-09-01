@@ -23,16 +23,26 @@ with open(budgetCSV, newline="") as csvfile:
     months_count= list(csvreader)
     row_count = len(months_count)
     print("Total Months: " + str(len(months_count)))
-    
-#Sum of Money -- does not work yet; no error but nothing prints
+
+#Dictionary
+with open('budget_data.csv') as file:
+    reader = csv.DictReader(file)
+    for row in reader:
+        #this just prints the whole dictionary to show it works
+        print(row)
+        
+#Sum of Money -- does not work yet; it prints numbers, but not one total number
 def Sum():
     with open(budgetCSV, newline="") as csvfile:
         csvreader = csv.reader(csvfile, delimiter=",")
         next(csvreader, None)
+        sumofmoney = 0
         for row in csvreader:
-            sumofmoney = 0
-            sumofmoney += int(row[1])
-            print(sumofmoney)
+            money = len(row[1])
+            #sumofmoney += int(row[1])
+            sumofmoney += money
+        print("Total: $" + str(sumofmoney))
+        
         #sumofmoney = []
         #totalmoney = []
         #for each entry in the money column (How do I say this?!)
