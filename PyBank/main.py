@@ -24,15 +24,10 @@ with open(budgetCSV, newline="") as csvfile:
     row_count = len(months_count)
     print("Total Months: " + str(len(months_count)))
 
-#Dictionary - not complete
-#with open('budget_data.csv') as file:
-    #reader = csv.DictReader(file)
-    #for row in reader:
-        #dates = [str(row[0])]
-        #profits = [int(row[1])]
-
-        #this just prints the whole dictionary to show it works
-        #print(row)
+#with open('psc.csv',newline='') as pscfile:
+    #reader = csv.reader(pscfile)
+    #next(reader)
+    #results = dict(reader)
 
 #for row in data:
     #profit_loss = int(row[1])
@@ -40,7 +35,6 @@ with open(budgetCSV, newline="") as csvfile:
     #total = total + profit_loss
 
 #Sum of Money -- does not work yet; it prints numbers, but not one total number
-#def Sum():
 with open(budgetCSV, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
@@ -64,21 +58,6 @@ with open(budgetCSV, newline="") as csvfile:
        #Total Revenue
        #revenue = revenue + int(CSVlist[row][1])
         
-        #sumofmoney = []
-        #totalmoney = []
-        #for each entry in the money column (How do I say this?!)
-        #I think the += is telling it to add... hopefully. 
-        #for each x in range(moneylisted)
-        #totalmoney.append(moneylisted[int(sum(money))])
-        #sumofmoney += int(moneylisted)
-        #print("Total: $" + str(sum(sumofmoneyy)))
-        #print(f"Total: $ + {float(sumofmoney)}")
-        #need to figure out how to tell it sum of column 2 (actually 1). 
-        #I think it would be row[1] something. Maybe.
-        #can I tell the computer[row, column]?
-
-#Sum()
-
 #list_of_values = 0
 #total = 0
 #row_number = 1
@@ -91,13 +70,44 @@ with open(budgetCSV, newline="") as csvfile:
 #printer (total) 
 #print (row_number)
 
+#Dictionary - not complete
+import csv
+input_stuff = csv.DictReader(open("budget_data.csv"))
+max_income = None
+date_max_income = None
+for row in input_stuff:
+    income = int(row["Profit/Losses"])
+    if max_income == None or max_income < income:
+        max_income = income
+        date_max_income = row["Date"]
+if max_income != None:
+    print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
+else:
+    print("Uh oh!")
+#with open('budget_data.csv') as file:
+    #reader = csv.DictReader(file)
+    #for row in reader:
+        #below does not work yet
+        #grand_master = {'Date': row[0], 'Profit/Losses': row[1]}
+        #dates = [str(row[0])]
+        #profits = [int(row[1])]
+
+        #this just prints the whole dictionary to show it works
+        #print(row)
+        #print(grand_master)
+
 #Averages Between Months -- does not work yet
+
+#previous = total
+#next
+
 #def Averages(betweenmonths):
+    #see month_count above to get number of months (number of rows)
     #for row in csv reader:
-        # months = (month[0])
-        # monthmoney = (monthmoneys[1])
+        #sumofmoney is already defined, but may need to define again
+        #profit_row = int(row[1])
         #for each monthmoney in months
-        # return monthmoney(first) - monthmoney(second)
+            #return monthmoney(first) - monthmoney(second)
     #tell it to subtract between each row in second [1] column
     #tell it to add the outputs from above
     #tell it to divide by the total number of outputs
