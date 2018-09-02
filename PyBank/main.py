@@ -71,6 +71,41 @@ with open(budgetCSV, newline="") as csvfile:
 #print (row_number)
 
 #Dictionary - not complete
+
+#with open('budget_data.csv') as file:
+    #reader = csv.DictReader(file)
+    #for row in reader:
+        #below does not work yet
+        #grand_master = {'Date': row[0], 'Profit/Losses': row[1]}
+        #dates = [str(row[0])]
+        #profits = [int(row[1])]
+
+        #this just prints the whole dictionary to show it works
+        #print(row)
+        #print(grand_master)
+
+#Averages between months - does not work  yet
+import csv
+input_funds = csv.DictReader(open("budget_data.csv"))
+funds_total = None
+difference_in_funds = None
+for row in input_funds:
+    funds = int(row["Profit/Losses"])
+    if funds_total == None or funds_total 
+
+    #see month_count above to get number of months (number of rows)
+    #for row in csv reader:
+        #sumofmoney is already defined, but may need to define again
+        #profit_row = int(row[1])
+        #for each monthmoney in months
+            #return monthmoney(first) - monthmoney(second)
+    #tell it to subtract between each row in second [1] column
+    #tell it to add the outputs from above
+    #tell it to divide by the total number of outputs
+    #previous = total
+    #next
+
+#Biggest increase by date and amount
 import csv
 input_stuff = csv.DictReader(open("budget_data.csv"))
 max_income = None
@@ -84,39 +119,6 @@ if max_income != None:
     print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
 else:
     print("Uh oh!")
-#with open('budget_data.csv') as file:
-    #reader = csv.DictReader(file)
-    #for row in reader:
-        #below does not work yet
-        #grand_master = {'Date': row[0], 'Profit/Losses': row[1]}
-        #dates = [str(row[0])]
-        #profits = [int(row[1])]
-
-        #this just prints the whole dictionary to show it works
-        #print(row)
-        #print(grand_master)
-
-#Averages Between Months -- does not work yet
-
-#previous = total
-#next
-
-#def Averages(betweenmonths):
-    #see month_count above to get number of months (number of rows)
-    #for row in csv reader:
-        #sumofmoney is already defined, but may need to define again
-        #profit_row = int(row[1])
-        #for each monthmoney in months
-            #return monthmoney(first) - monthmoney(second)
-    #tell it to subtract between each row in second [1] column
-    #tell it to add the outputs from above
-    #tell it to divide by the total number of outputs
-
-#Date and Profit/Losses columns 
-#Date is Month and Year, column 0
-#Profit and loses have no decimals, commas or dollar signs; column 1
-
-#sum of numbers in Profit/losses columns
 
 #the average change between each month for all of the data (single number output)
 #first subtract between each month, and then take the average of all of those outputs
