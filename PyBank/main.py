@@ -85,13 +85,13 @@ with open(budgetCSV, newline="") as csvfile:
         #print(grand_master)
 
 #Averages between months - does not work  yet
-import csv
-input_funds = csv.DictReader(open("budget_data.csv"))
-funds_total = None
-difference_in_funds = None
-for row in input_funds:
-    funds = int(row["Profit/Losses"])
-    if funds_total == None or funds_total 
+#import csv
+#input_funds = csv.DictReader(open("budget_data.csv"))
+#funds_total = None
+#difference_in_funds = None
+#for row in input_funds:
+    #funds = int(row["Profit/Losses"])
+    #if funds_total == None or funds_total 
 
     #see month_count above to get number of months (number of rows)
     #for row in csv reader:
@@ -120,13 +120,22 @@ if max_income != None:
 else:
     print("Uh oh!")
 
+#Biggest decreae by date and amount
+import csv
+input_file = csv.DictReader(open("budget_data.csv"))
+min_income = None
+date_min_income = None
+for row in input_file:
+    income2 = int(row["Profit/Losses"])
+    if min_income == None or min_income > income2:
+        min_income = income2
+        date_min_income = row["Date"]
+if min_income != None:
+    print(("The biggest decreaese in funds is $ %d in %s") % (min_income, date_min_income))
+else:
+    print("Uh oh!") 
+
 #the average change between each month for all of the data (single number output)
 #first subtract between each month, and then take the average of all of those outputs
-
-#find the biggest increase in funds in data by date and amount
-
-#find the biggest decrease in losses in data by date and amount
-
-#print terminal
 
 #create text file
