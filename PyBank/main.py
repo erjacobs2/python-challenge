@@ -24,32 +24,14 @@ with open(budgetCSV, newline="") as csvfile:
     row_count = len(months_count)
     print("Total Months: " + str(len(months_count)))
 
-#with open('psc.csv',newline='') as pscfile:
-    #reader = csv.reader(pscfile)
-    #next(reader)
-    #results = dict(reader)
-
-#for row in data:
-    #profit_loss = int(row[1])
-    #print(profit_loss)
-    #total = total + profit_loss
-
-#Sum of Money -- does not work yet; it prints numbers, but not one total number
+#Sum of Money
 with open(budgetCSV, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     next(csvreader)
-    #next(csvreader, None)
-    #sumofmoney = 0
-    #for row in csvreader:
-    #for row in range(1, len(profits)):
     total = 0
     for row in csvreader: 
         sumofmoney = int(row[1])
         total = total + sumofmoney
-        #sumofmoney += int(row[1])
-        #sumofmoney += money
-        #sumofmoney = sumofmoney + total
-    #print("Total: $" + str(sumofmoney))
     print("Total: $" + str(total))
 
         # loop through range 1 to number of items in list
@@ -70,28 +52,17 @@ with open(budgetCSV, newline="") as csvfile:
 #printer (total) 
 #print (row_number)
 
-#Dictionary - not complete
-
-#with open('budget_data.csv') as file:
-    #reader = csv.DictReader(file)
-    #for row in reader:
-        #below does not work yet
-        #grand_master = {'Date': row[0], 'Profit/Losses': row[1]}
-        #dates = [str(row[0])]
-        #profits = [int(row[1])]
-
-        #this just prints the whole dictionary to show it works
-        #print(row)
-        #print(grand_master)
-
 #Averages between months - does not work  yet
-#import csv
-#input_funds = csv.DictReader(open("budget_data.csv"))
-#funds_total = None
-#difference_in_funds = None
-#for row in input_funds:
-    #funds = int(row["Profit/Losses"])
-    #if funds_total == None or funds_total 
+import csv
+input_funds = csv.DictReader(open("budget_data.csv"))
+funds_total = None
+difference_in_funds = None
+for row in input_funds:
+    funds = int(len(row["Profit/Losses"]))
+    if funds_total == None
+        funds_total = funds - 1
+        difference_in_funds = funds_total
+    print("Average difference" + str(funds_total))
 
     #see month_count above to get number of months (number of rows)
     #for row in csv reader:
