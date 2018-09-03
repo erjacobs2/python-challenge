@@ -17,9 +17,21 @@ with open(pollCSV, newline="") as csvfile:
     print("Total Votes: " + str(len(vote_count)))
 
 #Calculate complete list of candidates who received votes
+#it may not like that statement below is not tabbed/does not have new csv open
+
+def unique(list1):
+    unique_candidates = []
+    for x in list1:
+        if x not in unique_list:
+            unique_list.append(x)
+    for x in unique_candidates:
+        print(x)
 
 #Calculate percentage of votes each candidate won
-#How do I tell it to do it for each individual canidate? 
+#maybe use counter() to find the number of votes
+import csv
+import_list = csv.DictReader(open("election_data.csv"))
+
 #def getPercentages(polldata):
     #percentagewon = (int(polldata[2])/row_count) * 100
     #for row in csvreader:
@@ -29,6 +41,7 @@ with open(pollCSV, newline="") as csvfile:
             #getPercentages(row)
 
 #Calculate total number of votes each candidate won
+#will need a way to find unique names and count each time a name appears
 
 #Calculate winner of election based on popular vote
 import csv

@@ -58,15 +58,18 @@ input_funds = csv.DictReader(open("budget_data.csv"))
 funds_total = None
 difference_in_funds = None
 for row in input_funds:
+    #I'm trying to figure out if I should just put the len in the funds statement instead of having a seperate numbering
     funds = int(row["Profit/Losses"])
     numbering = len(funds)
     if funds_total == None
         #below will not work as is due to it subtracting everything
-        funds_total -= funds + numbering
-        average_difference =
+        difference_in_funds -= funds
+        #funds_total.append(difference_in_funds)
         #count the number of subtractions that occur to divide later
-        #use append, I think, to start to add each difference 
-        break
+        #use append, I think, to start to add each difference
+        #x = funds_total.count(difference_in_funds) <== use if numbering doesn't work
+        #average_funds = funds_total / x <== or numbering
+        #break
     print("Average difference: $" + str(average_difference))
 
     #see month_count above to get number of months (number of rows)
