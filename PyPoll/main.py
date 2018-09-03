@@ -27,6 +27,19 @@ with open(pollCSV, newline="") as csvfile:
         #below won't work since candidate name isn't defined
         #if(candidatename == row[0])
             #getPercentages(row)
+
 #Calculate total number of votes each candidate won
 
 #Calculate winner of election based on popular vote
+import csv
+input_stuff = csv.DictReader(open("election_data.csv"))
+number_of_votes = None
+for row in input_stuff:
+    candidate = str(row["Candidate"])
+    if max_income == None or max_income < income:
+        max_income = income
+        date_max_income = row["Date"]
+if max_income != None:
+    print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
+else:
+    print("Uh oh!")

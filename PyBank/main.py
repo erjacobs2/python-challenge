@@ -58,18 +58,18 @@ input_funds = csv.DictReader(open("budget_data.csv"))
 funds_total = None
 difference_in_funds = None
 for row in input_funds:
-    funds = int(len(row["Profit/Losses"]))
+    funds = int(row["Profit/Losses"])
+    numbering = len(funds)
     if funds_total == None
-        funds_total = funds - 1
-        difference_in_funds = funds_total
-    print("Average difference" + str(funds_total))
+        #below will not work as is due to it subtracting everything
+        funds_total -= funds + numbering
+        average_difference =
+        #count the number of subtractions that occur to divide later
+        #use append, I think, to start to add each difference 
+        break
+    print("Average difference: $" + str(average_difference))
 
     #see month_count above to get number of months (number of rows)
-    #for row in csv reader:
-        #sumofmoney is already defined, but may need to define again
-        #profit_row = int(row[1])
-        #for each monthmoney in months
-            #return monthmoney(first) - monthmoney(second)
     #tell it to subtract between each row in second [1] column
     #tell it to add the outputs from above
     #tell it to divide by the total number of outputs
