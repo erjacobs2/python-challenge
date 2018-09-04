@@ -33,13 +33,16 @@ if unique_candidates != None:
 #Calculate percentage of votes each candidate won
 #maybe use counter() to find the number of votes
 import csv
+from collections import Counter
 import_percent_list = csv.DictReader(open("election_data.csv"))
 candidate_percent_list = None
 vote_percent_list = None
 for row in import_percent_list:
     candidate1 = str(row["Candidate"])
     if candidate_percent_list not in candidate1:
-        #need to pull the candidates
+        #may need to move counter statement below somewhere else
+        count = Counter(candidate_percent_list).items()
+        #need to both name and count candidates, the above I think only counts them but may name them too
         #need to calculate the number of candidate votes divide by total number of votes and multiply by 100
 
 #Below may help
@@ -52,6 +55,15 @@ for row in import_percent_list:
 
 #Calculate total number of votes each candidate won
 #do above minus the percentage calculation
+import csv
+import_votes_list = csv.DictReader(open("election_data.csv"))
+candidate_vote_list = None
+vote_list = None
+for row in import_votes_list:
+    candidate2 = str(row["Candidate"])
+    if canidate_vote_list not in candidate2:
+        #add candidate name
+        #add number of occurances of candidate name
 
 #Calculate winner of election based on popular vote
 import csv
