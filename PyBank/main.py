@@ -54,6 +54,7 @@ with open(budgetCSV, newline="") as csvfile:
 
 #Averages between months - does not work  yet
 import csv
+from collection import Counter
 input_funds = csv.DictReader(open("budget_data.csv"))
 funds_total = None
 difference_in_funds = None
@@ -64,6 +65,7 @@ for row in input_funds:
     if funds_total == None
         #below will not work as is due to it subtracting everything
         difference_in_funds -= funds
+        count = Counter(difference_in_funds).items()
         #funds_total.append(difference_in_funds)
         #count the number of subtractions that occur to divide later
         #use append, I think, to start to add each difference
@@ -72,12 +74,28 @@ for row in input_funds:
         #break
     print("Average difference: $" + str(average_difference))
 
+    #Below may help
+#from collections import Counter
+#names = ['adam','josh','drake']
+#count = Counter(names).items()
+#percentages = {x: int(float(y) / len(names) * 100) for x, y in count}
+#for name, pct in percentages.iteritems():
+    #print '%s - %s%s' % (name, pct, '%')
+    
     #see month_count above to get number of months (number of rows)
     #tell it to subtract between each row in second [1] column
     #tell it to add the outputs from above
     #tell it to divide by the total number of outputs
     #previous = total
     #next
+
+#def average(numbers):
+    #length = len(numbers)
+    #total = 0.0
+    #for number in numbers:
+        #total += number
+    #return total / length
+
 
 #Biggest increase by date and amount
 import csv
@@ -109,7 +127,22 @@ if min_income != None:
 else:
     print("Uh oh!") 
 
-#the average change between each month for all of the data (single number output)
-#first subtract between each month, and then take the average of all of those outputs
+#create text file - see below for similar example
+# Dependencies
+#import os
+#import csv
 
-#create text file
+# Specify the file to write to
+#output_path = os.path.join("..", "output", "new.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+#with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    #csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+    # Write the second row
+    #csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])

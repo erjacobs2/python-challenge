@@ -8,7 +8,7 @@ with open(pollCSV, newline="") as csvfile:
     #Line below skips header row
     next(csvreader, None)
     
-#columns = Voter ID, County, Canidate
+#columns = Voter ID, County, Candidate
 
 #Calculate total number of votes casted -- should work? I need to re-test with other code working or turned off
     vote_count = list(csvreader)
@@ -16,8 +16,6 @@ with open(pollCSV, newline="") as csvfile:
     print("Total Votes: " + str(len(vote_count)))
 
 #Calculate complete list of candidates who received votes -- should work but has NOT been tested yet
-#it may not like that statement below is not tabbed/does not have new csv open
-
 import csv
 import_candidate_list = csv.DictReader(open("election_data.csv"))
 unique_candidates = None
@@ -44,7 +42,7 @@ for row in import_percent_list:
         count = Counter(candidate_percent_list).items()
         percentage = {x: int(float(y) / len(candidate_percent_list) * 100) for x, y in count}
 if candidate_percent_list != None:
-    print(%s - %s%s) % (candidate_percent_list, pct, "%")
+    print(%s - %s%s) % (candidate_percent_list, percentage, "%")
         #need to both name and count candidates, the above I think only counts them but may name them too
         #need to calculate the number of candidate votes divide by total number of votes and multiply by 100
 
@@ -89,3 +87,23 @@ for row in input_stuff:
     #print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
 #else:
     #print("Uh oh!")
+
+#create text file - see below for similar example
+# Dependencies
+#import os
+#import csv
+
+# Specify the file to write to
+#output_path = os.path.join("..", "output", "new.csv")
+
+# Open the file using "write" mode. Specify the variable to hold the contents
+#with open(output_path, 'w', newline='') as csvfile:
+
+    # Initialize csv.writer
+    #csvwriter = csv.writer(csvfile, delimiter=',')
+
+    # Write the first row (column headers)
+    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+
+    # Write the second row
+    #csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
