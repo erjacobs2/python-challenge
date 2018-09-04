@@ -96,6 +96,12 @@ for row in input_funds:
         #total += number
     #return total / length
 
+  ## Access every 3rd element in a list
+  #i = 0
+  #while i < len(a):
+    #print a[i]
+    #i = i + 3
+
 
 #Biggest increase by date and amount
 import csv
