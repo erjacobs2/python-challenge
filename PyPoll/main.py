@@ -8,15 +8,14 @@ with open(pollCSV, newline="") as csvfile:
     #Line below skips header row
     next(csvreader, None)
     
-#import election_data.csv
 #columns = Voter ID, County, Canidate
 
-#Calculate total number of votes casted
+#Calculate total number of votes casted -- should work? I need to re-test with other code working or turned off
     vote_count = list(csvreader)
     row_count = len(vote_count)
     print("Total Votes: " + str(len(vote_count)))
 
-#Calculate complete list of candidates who received votes
+#Calculate complete list of candidates who received votes -- should work but has NOT been tested yet
 #it may not like that statement below is not tabbed/does not have new csv open
 
 import csv
@@ -30,18 +29,22 @@ for row in import_candidate_list:
 if unique_candidates != None:
     print(unique_candidates)
 
-#Calculate percentage of votes each candidate won
+#Calculate percentage of votes each candidate won -- does NOT work yet
 #maybe use counter() to find the number of votes
 import csv
 from collections import Counter
 import_percent_list = csv.DictReader(open("election_data.csv"))
 candidate_percent_list = None
-vote_percent_list = None
+#vote_percent_list = None <== may need another empty list so that candidate names are listed separately from their percentages
 for row in import_percent_list:
     candidate1 = str(row["Candidate"])
     if candidate_percent_list not in candidate1:
         #may need to move counter statement below somewhere else
+        candidate_percent_list.append(candidate1)
         count = Counter(candidate_percent_list).items()
+        percentage = {x: int(float(y) / len(candidate_percent_list) * 100) for x, y in count}
+if candidate_percent_list != None:
+    print(%s - %s%s) % (candidate_percent_list, pct, "%")
         #need to both name and count candidates, the above I think only counts them but may name them too
         #need to calculate the number of candidate votes divide by total number of votes and multiply by 100
 
@@ -53,24 +56,32 @@ for row in import_percent_list:
 #for name, pct in percentages.iteritems():
     #print '%s - %s%s' % (name, pct, '%')
 
-#Calculate total number of votes each candidate won
+#Calculate total number of votes each candidate won -- does NOT work yet
 #do above minus the percentage calculation
 import csv
+from collections import Counter
 import_votes_list = csv.DictReader(open("election_data.csv"))
 candidate_vote_list = None
 vote_list = None
 for row in import_votes_list:
     candidate2 = str(row["Candidate"])
     if canidate_vote_list not in candidate2:
+        candidate_vote_list.append(candidate2)
+        count = Counter(candidate_percent_list).items()
+if candidate_percent_list != None:
+    print(%s - %s) % (candidate_percent_list, count)
         #add candidate name
         #add number of occurances of candidate name
 
-#Calculate winner of election based on popular vote
+#Calculate winner of election based on popular vote -- does NOT work yet
 import csv
 input_stuff = csv.DictReader(open("election_data.csv"))
 number_of_votes = None
 for row in input_stuff:
     candidate = str(row["Candidate"])
+    #need to loop through names while counting
+    #need to print the name of the candidate with the most votes but don't print the number
+
     #if max_income == None or max_income < income:
         #max_income = income
         #date_max_income = row["Date"]
