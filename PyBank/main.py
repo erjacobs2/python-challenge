@@ -53,26 +53,26 @@ with open(budgetCSV, newline="") as csvfile:
 #print (row_number)
 
 #Averages between months - does not work  yet
-import csv
-from collection import Counter
-input_funds = csv.DictReader(open("budget_data.csv"))
-funds_total = None
-difference_in_funds = None
-for row in input_funds:
+#import csv
+#from collection import Counter
+#input_funds = csv.DictReader(open("budget_data.csv"))
+#funds_total = None
+#difference_in_funds = None
+#for row in input_funds:
     #I'm trying to figure out if I should just put the len in the funds statement instead of having a seperate numbering
-    funds = int(row["Profit/Losses"])
-    numbering = len(funds)
-    if funds_total == None
+    #funds = int(row["Profit/Losses"])
+    #numbering = len(funds)
+    #if funds_total == None
         #below will not work as is due to it subtracting everything
-        difference_in_funds -= funds
-        count = Counter(difference_in_funds).items()
+        #difference_in_funds -= funds
+        #count = Counter(difference_in_funds).items()
         #funds_total.append(difference_in_funds)
         #count the number of subtractions that occur to divide later
         #use append, I think, to start to add each difference
         #x = funds_total.count(difference_in_funds) <== use if numbering doesn't work
         #average_funds = funds_total / x <== or numbering
         #break
-    print("Average difference: $" + str(average_difference))
+    #print("Average difference: $" + str(average_difference))
 
     #Below may help
 #from collections import Counter

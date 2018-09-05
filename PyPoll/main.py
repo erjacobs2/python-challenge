@@ -23,7 +23,9 @@ unique_candidates = []
 for row in import_candidate_list:
     candidate_list = str(row["Candidate"])
     if unique_candidates != candidate_list:
-       unique_candidates.append(candidate_list)
+       unique_candidates.append(candidate_list
+    else: 
+       next
 if unique_candidates != 0:
     print(unique_candidates)
 
@@ -56,6 +58,7 @@ if candidate_percent_list != 0:
 
 #Calculate total number of votes each candidate won -- does NOT work yet
 #do above minus the percentage calculation
+#see min max script to see how it put the correlating name without making a seperate list
 import csv
 from collections import Counter
 import_votes_list = csv.DictReader(open("election_data.csv"))
@@ -80,13 +83,19 @@ for row in input_stuff:
     #need to loop through names while counting
     #need to print the name of the candidate with the most votes but don't print the number
 
-    #if max_income == None or max_income < income:
-        #max_income = income
-        #date_max_income = row["Date"]
-#if max_income != None:
-    #print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
+#import csv
+#input_file = csv.DictReader(open("budget_data.csv"))
+#min_income = None
+#date_min_income = None
+#for row in input_file:
+    #income2 = int(row["Profit/Losses"])
+    #if min_income == None or min_income > income2:
+        #min_income = income2
+        #date_min_income = row["Date"]
+#if min_income != None:
+    #print(("The biggest decreaese in funds is $ %d in %s") % (min_income, date_min_income))
 #else:
-    #print("Uh oh!")
+    #print("Uh oh!") 
 
 #create text file - see below for similar example
 # Dependencies
