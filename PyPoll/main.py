@@ -116,3 +116,5 @@ for row in input_stuff:
 
     # Write the second row
     #csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
+
+#from collection import Counter

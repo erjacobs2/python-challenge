@@ -53,26 +53,25 @@ with open(budgetCSV, newline="") as csvfile:
 #print (row_number)
 
 #Averages between months - does not work  yet
-#import csv
-#from collection import Counter
-#input_funds = csv.DictReader(open("budget_data.csv"))
-#funds_total = None
-#difference_in_funds = None
-#for row in input_funds:
-    #I'm trying to figure out if I should just put the len in the funds statement instead of having a seperate numbering
-    #funds = int(row["Profit/Losses"])
-    #numbering = len(funds)
-    #if funds_total == None
-        #below will not work as is due to it subtracting everything
-        #difference_in_funds -= funds
-        #count = Counter(difference_in_funds).items()
-        #funds_total.append(difference_in_funds)
-        #count the number of subtractions that occur to divide later
-        #use append, I think, to start to add each difference
-        #x = funds_total.count(difference_in_funds) <== use if numbering doesn't work
-        #average_funds = funds_total / x <== or numbering
-        #break
-    #print("Average difference: $" + str(average_difference))
+#difference_list = []
+#for row in range(1, len(CSVlist)-1):
+    #first = int(CSVlist[row][1])
+    #second = int(CSVlist[row+1][1])
+    #difference = second - first
+    #difference_list = []
+
+import csv
+input_funds = csv.DictReader(open("budget_data.csv"))
+difference_in_funds = []
+for row in input_funds:
+    first = int(row["Profit/Losses"])
+    second = int(row["Profit/Losses" + 1])
+    difference = second-first
+    difference_in_funds.append(difference)
+    month_correlated = row["Date"]
+average_differences = round(sum(difference_in_funds)/(months_count-1), 2)
+print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
+
 
     #Below may help
 #from collections import Counter
