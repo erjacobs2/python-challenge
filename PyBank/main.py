@@ -34,31 +34,7 @@ with open(budgetCSV, newline="") as csvfile:
         total = total + sumofmoney
     print("Total: $" + str(total))
 
-        # loop through range 1 to number of items in list
-   #for row in range(1, len(CSVlist)):
-
-       #Total Revenue
-       #revenue = revenue + int(CSVlist[row][1])
-        
-#list_of_values = 0
-#total = 0
-#row_number = 1
-#for row in csvreader:
-    #if row_number !=1
-        #list_of_values = int(row[1])
-        #total = total + list_of_values
-        #print(total)
-    #row_number += 1
-#printer (total) 
-#print (row_number)
-
-#Averages between months - does not work  yet
-#difference_list = []
-#for row in range(1, len(CSVlist)-1):
-    #first = int(CSVlist[row][1])
-    #second = int(CSVlist[row+1][1])
-    #difference = second - first
-    #difference_list = []
+#Averages between months - works, but output number does not match what's listed on GitLab
 
 with open(budgetCSV, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
@@ -74,7 +50,7 @@ with open(budgetCSV, newline="") as csvfile:
 average_differences = round(sum(difference_in_funds)/(row_count-1), 2)
 print("The average difference between months is $" + str(average_differences))
 
-#Averages between months with dictionary - does not work either
+#Averages between months with dictionary - does not work
 #import csv
 #input_funds = csv.DictReader(open("budget_data.csv"))
 #difference_in_funds = 0
@@ -84,20 +60,6 @@ print("The average difference between months is $" + str(average_differences))
     #difference = second-first
     #difference_in_funds.append(difference)
 #average_differences = round(sum(difference_in_funds)/(months_count-1), 2)
-
-#def average(numbers):
-    #length = len(numbers)
-    #total = 0.0
-    #for number in numbers:
-        #total += number
-    #return total / length
-
-  ## Access every 3rd element in a list
-  #i = 0
-  #while i < len(a):
-    #print a[i]
-    #i = i + 3
-
 
 #Biggest increase by date and amount
 import csv

@@ -7,13 +7,35 @@ with open(pollCSV, newline="") as csvfile:
     csvreader = csv.reader(csvfile, delimiter=",")
     #Line below skips header row
     next(csvreader, None)
-    
-#columns = Voter ID, County, Candidate
 
 #Calculate total number of votes casted
     vote_count = list(csvreader)
     row_count = len(vote_count)
     print("Total Votes: " + str(len(vote_count)))
+
+#Below does not work
+with open(pollCSV, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader, None)
+    names = []
+    vote_count = list(csvreader)
+    row_count = len(vote_count)
+    for row in csvreader:
+        names.append(row[2])
+    print(names)
+
+import csv
+input_file = csv.DictReader(open("election_data.csv"))
+name = []
+for row in input_file:
+    name.append(row["Candidate"])
+    #names = row["Candidate"]
+    #if min_income == None or min_income > income2:
+        #min_income = income2
+        #date_min_income = row["Date"]
+if name != None:
+    print(name)
+    print("%s") % (name)
 
 #Calculate complete list of candidates who received votes -- does NOT work, it prints all the names
 #import csv
@@ -28,6 +50,7 @@ with open(pollCSV, newline="") as csvfile:
        #next
 #if unique_candidates != 0:
     #print(unique_candidates)
+
 
 #Calculate percentage of votes each candidate won -- does NOT work
 #maybe use counter() to find the number of votes
@@ -82,21 +105,7 @@ if candidate_percent_list != None:
     #candidate = str(row["Candidate"])
     #need to loop through names while counting
     #need to print the name of the candidate with the most votes but don't print the number
-
-#import csv
-#input_file = csv.DictReader(open("budget_data.csv"))
-#min_income = None
-#date_min_income = None
-#for row in input_file:
-    #income2 = int(row["Profit/Losses"])
-    #if min_income == None or min_income > income2:
-        #min_income = income2
-        #date_min_income = row["Date"]
-#if min_income != None:
-    #print(("The biggest decreaese in funds is $ %d in %s") % (min_income, date_min_income))
-#else:
-    #print("Uh oh!") 
-
+    
 #create text file - see below for similar example
 # Dependencies
 #import os
