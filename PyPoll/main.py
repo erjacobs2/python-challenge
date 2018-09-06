@@ -24,78 +24,21 @@ with open(pollCSV, newline="") as csvfile:
         names.append(row[2])
     print(names)
 
-import csv
-input_file = csv.DictReader(open("election_data.csv"))
-name = []
-for row in input_file:
-    name.append(row["Candidate"])
-    #names = row["Candidate"]
-    #if min_income == None or min_income > income2:
-        #min_income = income2
-        #date_min_income = row["Date"]
-if name != None:
-    print(name)
-    print("%s") % (name)
-
-#Calculate complete list of candidates who received votes -- does NOT work, it prints all the names
-#import csv
-#import_candidate_list = csv.DictReader(open("election_data.csv"))
-#unique_candidates = []
-#def unique(list1):
-#for row in import_candidate_list:
-    #candidate_list = str(row["Candidate"])
-    #if unique_candidates != candidate_list:
-       #unique_candidates.append(candidate_list)
-    #else: 
-       #next
-#if unique_candidates != 0:
-    #print(unique_candidates)
-
-
-#Calculate percentage of votes each candidate won -- does NOT work
-#maybe use counter() to find the number of votes
-#if running out of time tell it to count by name
+#calculate the votes per candidate and the percentage - does not work
 import csv
 from collections import Counter
-import_list = csv.DictReader(open("election_data.csv"))
-candidate_name = []
-candidate_percent_list = []
-candidate_total = []
+input_file = csv.DictReader(open("election_data.csv"))
+percent = []
+total = []
+for row in input_file:
+    candidates = row["Candidate"]
+    count = Counter(candidates).items()
+    total.append(count)
+for i in total:
+    percentage = (int(count) / len(candidate_percent_list) * 100)
+if total != None:
+    print("%s - %d%s %d") % (candidates, percent, "%", total)
 
-for row in import_list:
-    candidate1 = str(row["Candidate"])
-    #votes = str(len(row["Candidate"]))
-    if candidate_name != candidate1:
-        candidate2 = str(row["Candidate"])
-        candidate_name.append(candidate2)
-        count = Counter(candidate2).items()
-        candidate_total.append(count)
-    else:
-        candidate1 = 1
-for i in candidate_total:
-    i = round(((i/int(votes)) * 100), 2)
-    candidate_percent_list.append(i) 
-        #percentage = (int(count) / len(candidate_percent_list) * 100)
-if candidate_percent_list != None:
-    print("%s - %d%s %d") % (candidate_name, candidate_percent_list, "%", candidate_total)
-
-#Calculate total number of votes each candidate won -- does NOT work yet
-#do above minus the percentage calculation
-#see min max script to see how it put the correlating name without making a seperate list
-#import csv
-#from collections import Counter
-#import_votes_list = csv.DictReader(open("election_data.csv"))
-#candidate_vote_list = []
-#vote_list = None
-#for row in import_votes_list:
-    #candidate2 = str(row["Candidate"])
-    #if canidate_vote_list not in candidate2:
-        #candidate_vote_list.append(candidate2)
-        #count = Counter(candidate_percent_list).items()
-#if candidate_percent_list != 0:
-    #print("%s - %d") % (candidate_percent_list, count)
-        #add candidate name
-        #add number of occurances of candidate name
 
 #Calculate winner of election based on popular vote -- does NOT work yet
 #import csv
@@ -105,7 +48,7 @@ if candidate_percent_list != None:
     #candidate = str(row["Candidate"])
     #need to loop through names while counting
     #need to print the name of the candidate with the most votes but don't print the number
-    
+
 #create text file - see below for similar example
 # Dependencies
 #import os

@@ -91,22 +91,15 @@ if min_income != None:
 else:
     print("Uh oh!") 
 
-#create text file - see below for similar example
-# Dependencies
-#import os
-#import csv
+#create text file 
 
-# Specify the file to write to
-#output_path = os.path.join("..", "output", "new.csv")
-
-# Open the file using "write" mode. Specify the variable to hold the contents
+#output_path = os.path.join("..", 'PyBank', "new.csv")
 #with open(output_path, 'w', newline='') as csvfile:
-
-    # Initialize csv.writer
     #csvwriter = csv.writer(csvfile, delimiter=',')
 
-    # Write the first row (column headers)
-    #csvwriter.writerow(['First Name', 'Last Name', 'SSN'])
+    #csvwriter.writerow(["Total Months: " + str(len(months_count))])
+    #csvwriter.writerow(["Total: $" + str(total)])
+    #csvwriter.writerow(["The average difference between months is $" + str(average_differences)])
+    #csvwriter.writerow(["The biggest increase in funds is $ %d in %s") % (max_income, date_max_income)])
+    #csvwriter.writerow(["The biggest decreaese in funds is $ %d in %s") % (min_income, date_min_income])
 
-    # Write the second row
-    #csvwriter.writerow(['Caleb', 'Frost', '505-80-2901'])
