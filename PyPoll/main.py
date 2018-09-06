@@ -41,7 +41,7 @@ candidate_total = []
 
 for row in import_list:
     candidate1 = str(row["Candidate"])
-    votes = str(len(row["Candidate"]))
+    #votes = str(len(row["Candidate"]))
     if candidate_name != candidate1:
         candidate2 = str(row["Candidate"])
         candidate_name.append(candidate2)
@@ -53,7 +53,7 @@ for i in candidate_total:
     i = round(((i/int(votes)) * 100), 2)
     candidate_percent_list.append(i) 
         #percentage = (int(count) / len(candidate_percent_list) * 100)
-if candidate_percent_list != 0:
+if candidate_percent_list != None:
     print("%s - %d%s %d") % (candidate_name, candidate_percent_list, "%", candidate_total)
 
 #Calculate total number of votes each candidate won -- does NOT work yet

@@ -60,33 +60,30 @@ with open(budgetCSV, newline="") as csvfile:
     #difference = second - first
     #difference_list = []
 
-import csv
-input_funds = csv.DictReader(open("budget_data.csv"))
-difference_in_funds = []
-for row in input_funds:
-    first = int(row["Profit/Losses"])
-    second = int(row["Profit/Losses" + 1])
-    difference = second-first
-    difference_in_funds.append(difference)
-    month_correlated = row["Date"]
-average_differences = round(sum(difference_in_funds)/(months_count-1), 2)
-print(("The biggest increase in funds is $ %d in %s") % (max_income, date_max_income))
+with open(budgetCSV, newline="") as csvfile:
+    csvreader = csv.reader(csvfile, delimiter=",")
+    next(csvreader)
+    difference_in_funds = []
+    months_count= list(csvreader)
+    row_count = len(months_count)
+    for row in range(1, len(months_count)-1): 
+        first = int(months_count[row][1])
+        second = int(months_count[row+1][1])
+        difference = second - first
+        difference_in_funds.append(difference)
+average_differences = round(sum(difference_in_funds)/(row_count-1), 2)
+print("The average difference between months is $" + str(average_differences))
 
-
-    #Below may help
-#from collections import Counter
-#names = ['adam','josh','drake']
-#count = Counter(names).items()
-#percentages = {x: int(float(y) / len(names) * 100) for x, y in count}
-#for name, pct in percentages.iteritems():
-    #print '%s - %s%s' % (name, pct, '%')
-    
-    #see month_count above to get number of months (number of rows)
-    #tell it to subtract between each row in second [1] column
-    #tell it to add the outputs from above
-    #tell it to divide by the total number of outputs
-    #previous = total
-    #next
+#Averages between months with dictionary - does not work either
+#import csv
+#input_funds = csv.DictReader(open("budget_data.csv"))
+#difference_in_funds = 0
+#for row in input_funds:
+    #first = int(row["Profit/Losses"])
+    #second = int(row["Profit/Losses" + 1])
+    #difference = second-first
+    #difference_in_funds.append(difference)
+#average_differences = round(sum(difference_in_funds)/(months_count-1), 2)
 
 #def average(numbers):
     #length = len(numbers)
